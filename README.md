@@ -20,18 +20,6 @@ This project aims to build a **real-time distributed system** that detects fraud
 - **Containerization**: Docker, Docker Compose
 - **Cloud (Optional)**: AWS (for deployment)
 
-## Project Workflow
-
-```mermaid
-graph TD
-A[User Transaction Data/API Input] --> B[Kafka Producer]
-B --> C[Kafka Topics (Raw, Features, Results)]
-C --> D[Kafka Consumer]
-D --> E[Machine Learning Model (Flask App)]
-E --> F[Kafka Topic - Resulting Data]
-F --> G[Database Storage (MySQL)]
-F --> H[Visualization (ELK Stack: Logstash → Elasticsearch → Kibana)]
-
 ## Step-by-Step
 
 Incoming transaction data is ingested using Kafka Producers.
@@ -43,5 +31,35 @@ ML model (Flask app) consumes data, predicts fraud, sends results back to Kafka.
 Consumers store the predictions into MySQL.
 
 Data is also visualized in real-time using the ELK stack (ElasticSearch, Logstash, Kibana).
+
+## Results / Evaluation
+Random Forest achieved 97% accuracy in fraud detection.
+
+High precision, recall, and F1-scores.
+
+Real-time dashboards created using Kibana to visualize:
+
+Incoming transaction patterns
+
+Fraud detection results
+
+ML model performance
+
+## Repository Structure
+
+E-commerce-Fraud-Detection/
+├── data/                    # Sample transaction datasets
+├── models/                  # Saved ML model files
+├── notebooks/               # Jupyter Notebooks (exploration, EDA, training)
+├── scripts/                 # Python scripts (producers, consumers, ML interface)
+│   ├── ML_interface_producer.py
+│   ├── kafka_consumer.py
+│   ├── db_utilities.py
+├── images/                  # Charts, confusion matrices (optional)
+├── docker-compose.yml       # Docker Compose setup file
+├── requirements.txt         # Python dependencies
+├── README.md                 # Project documentation
+├── LICENSE                   # License file
+└── .gitignore                # Ignored files/folders
 
 
