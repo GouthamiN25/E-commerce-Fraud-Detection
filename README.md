@@ -49,17 +49,30 @@ ML model performance
 
 E-commerce-Fraud-Detection/
 ├── data/                    # Sample transaction datasets
+
 ├── models/                  # Saved ML model files
+
 ├── notebooks/               # Jupyter Notebooks (exploration, EDA, training)
+
 ├── scripts/                 # Python scripts (producers, consumers, ML interface)
+
 │   ├── ML_interface_producer.py
+
 │   ├── kafka_consumer.py
+
 │   ├── db_utilities.py
+
 ├── images/                  # Charts, confusion matrices (optional)
+
 ├── docker-compose.yml       # Docker Compose setup file
+
 ├── requirements.txt         # Python dependencies
+
 ├── README.md                 # Project documentation
+
 ├── LICENSE                   # License file
+
 └── .gitignore                # Ignored files/folders
+
 
 
